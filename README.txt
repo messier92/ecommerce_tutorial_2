@@ -2,4 +2,4 @@ To start server:
 npm start
 
 To start client:
-npm run develop
+npm run develop/npm start
