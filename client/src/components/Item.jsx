@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { IconButton, Box, Typography, useTheme, Button } from '@mui/material';
-import AddIcon from '@mui/material/Add';
+import AddIcon from '@mui/icons-material/Add';
 import RemoveIcon from '@mui/icons-material/Remove';
 import { shades } from "../theme";
 import { addToCart } from "../state";
@@ -37,7 +37,7 @@ const Item = ({item, width}) => {
                 onClick={() => navigate(`/item/${item.id}`)}
                 style={{cursor: 'pointer'}}
                 />
-                <Box display={isHovered ? "blocked" : "none"}
+                <Box display={isHovered ? "block" : "none"}
                 position="absolute"
                 bottom="10%"
                 left="0"
@@ -67,7 +67,8 @@ const Item = ({item, width}) => {
 
             <Box mt="3px">
             <Typography variant="subtitle2" color={neutral.dark}>
-            {category.replace(/([A-Z])/g, " $1")
+            {category == null ? "" : category
+            .replace(/([A-Z])/g, " $1")
             .replace(/^./, (str) => str.toUpperCase())}
             </Typography>
             <Typography>{name}</Typography>
